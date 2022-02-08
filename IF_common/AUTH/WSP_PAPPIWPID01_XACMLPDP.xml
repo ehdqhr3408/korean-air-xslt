@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolicySet
+	xmlns="urn:oasis:names:tc:xacml:2.0:policy:schema:os"
+	PolicySetId="PolicySet"
+	PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:permit-overrides">
+
+	<Target/>
+
+	<!-- DefaultPolicy First -->
+	<Policy PolicyId="DefaultRulePolicy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<Rule RuleId="DefaultRule" Effect="Deny">
+			<Description>Deny any access attempt not allowed by other rules</Description>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 1 -->
+	<Policy PolicyId="rule1Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>IBE authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule1" Effect="Permit">
+			<Description>WSKEIBE user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WSKEIBE</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">raa_RefundApplyRequest</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+
+
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_RetroCredit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AccrualMileageByRoute_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>	
+
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_ExpiredMileageDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberLevel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberMileageSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ExpiredMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FamilyInfoDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FlightMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_Member_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerAirline_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PeakSeason_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PORRetro_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_SkypassLov_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>	
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UsedMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PAS_Dom_Refund_Calc_Request</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 2 -->
+	<Policy PolicyId="rule2Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>KLS authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule2" Effect="Permit">
+			<Description>KLS user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">KLS</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">raa_RefundApplyRequest</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">raa_RefundCancelRequest</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PAS_Dom_Payment_history</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PAS_Dom_Refund_Calc_Request</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PAS_Dom_Refund_history</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_EKRetroCredit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_ExcessBaggageAUTH_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_MemberRemarks_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_RetroCredit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CreateUpdate_CardReissue_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CreateUpdateList_FamilyPlan_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CreateUpdateList_FamilyRegistration_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Delete_FlightMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_ExcessBaggageRedemptionChart_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_ExpiredMileageDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberLevel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberMileageSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_RedemptionAUTH_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AccrualMileageByRoute_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AccrualRateByAirline_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_BonusAuthHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_BonusBookingClass_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UpgradeBookingClass_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_CardStatusHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_CreditCardMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_EKRetroInquiry_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_EventMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ExpiredLoungeCouponHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ExpiredMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FamilyInfoDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FlightMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_LoungeCouponSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_MemberRemarks_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_MileageHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerAccrualMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerAirline_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PeakSeason_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PORRetro_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ProfileHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ReceivedMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ServiceComponent_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_SkypassAccrualMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_SkypassLov_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_STARouting_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UsedLoungeCouponHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UsedMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ZipCode_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_BonusAuthCancel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PSPIRU_Author</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AuthHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FamilyDeductionSimulation_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ManualAuth_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_Member_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_CardIssueHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_DeductedHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 3 -->
+	<Policy PolicyId="rule3Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>KLS authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule3" Effect="Permit">
+			<Description>IVR user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">IVR</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">IVRScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PeakSeason_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_BonusUpgradeChart_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 4 -->
+	<Policy PolicyId="rule4Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>PNS authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule4" Effect="Permit">
+			<Description>PNS user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PNS</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfoLight_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerAccrualMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 5 -->
+	<Policy PolicyId="rule5Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>ACP authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule5" Effect="Permit">
+			<Description>ACP user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ACP</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ACPSScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 6 -->
+	<Policy PolicyId="rule6Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>WLD authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule6" Effect="Permit">
+			<Description>WLD user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WLD</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">GDMCrewInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ACPSScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 7 -->
+	<Policy PolicyId="rule7Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>FID authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule7" Effect="Permit">
+			<Description>FID user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FID</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FIDSWeatherInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>				
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 8 -->
+	<Policy PolicyId="rule8Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>STF authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule8" Effect="Permit">
+			<Description>STF user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">STF</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">raa_RefundApplyRequest</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 9 -->
+	<Policy PolicyId="rule9Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>FCM authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule9" Effect="Permit">
+			<Description>FCM user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FCM</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 10 -->
+	<Policy PolicyId="rule10Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>WSKEIMM authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule10" Effect="Permit">
+			<Description>WSKEIMM user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WSKEIMM</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CreateUpdate_Membership_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfoLight_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberMileageSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_Member_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_MemberQuit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 11 -->
+	<Policy PolicyId="rule11Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>NAR authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule11" Effect="Permit">
+			<Description>NAR user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">NAR</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_BonusRefund_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_RefundMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 12 -->
+	<Policy PolicyId="rule12Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>PCA authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule12" Effect="Permit">
+			<Description>PCA user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PCA</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_MemberVOC_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 13 -->
+	<Policy PolicyId="rule13Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>VOC authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule13" Effect="Permit">
+			<Description>VOC user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">VOC</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>	
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_MemberVOC_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberMileageSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FlightMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberLevel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>					
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 14 -->
+	<Policy PolicyId="rule14Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>WSKESLN authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule14" Effect="Permit">
+			<Description>WSKESLN user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WSKESLN</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberLevel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 15 -->
+	<Policy PolicyId="rule15Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>VIP authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule15" Effect="Permit">
+			<Description>VIP user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">VIP</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_VIPMember_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 16 -->
+	<Policy PolicyId="rule16Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>HMP authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule16" Effect="Permit">
+			<Description>HMP user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">HMP</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfoMM_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfoLight_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FamilyInfoLight_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 17 -->
+	<Policy PolicyId="rule17Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>GWP authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule17" Effect="Permit">
+			<Description>GWP user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">GWP</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_EKRetroCredit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_LimousineAuth_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PORRetro_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Create_RetroCredit_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CreateUpdateList_FamilyPlan_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_ExpiredMileageDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberLevel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Search_MemberMileageSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AccrualMileageByRoute_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_AccrualRateByAirline_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_CreditCardMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_EKRetroInquiry_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_EventMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ExpiredLoungeCouponHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_ExpiredMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FamilyInfoDetail_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_FlightMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_LoungeCouponSummary_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_MileageAdvisor_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerAirline_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_PartnerMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_SkypassLov_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UsedLoungeCouponHistory_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_UsedMileage_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_LimousineAuthInfo_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_LimousineAuthCancel_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Update_LimousinePrintDate_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_MileageCalculator_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">PIDScheduleInfo</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>					
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 18 -->
+	<Policy PolicyId="rule18Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>CPS authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule18" Effect="Permit">
+			<Description>CPS usser operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CPS</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>	
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SearchList_MemberJobTitle_1_0_Input</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+
+</PolicySet>

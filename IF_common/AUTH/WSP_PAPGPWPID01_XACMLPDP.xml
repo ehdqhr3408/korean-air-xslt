@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolicySet
+	xmlns="urn:oasis:names:tc:xacml:2.0:policy:schema:os"
+	PolicySetId="PolicySet"
+	PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:permit-overrides">
+
+	<Target/>
+
+	<!-- DefaultPolicy First -->
+	<Policy PolicyId="DefaultRulePolicy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<Rule RuleId="DefaultRule" Effect="Deny">
+			<Description>Deny any access attempt not allowed by other rules</Description>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 1 -->
+	<Policy PolicyId="rule1Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>ODS authorization</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule1" Effect="Permit">
+			<Description>KLS user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">KLS</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ApprovalRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ApprovalHistoryRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ChequeRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CurrencyRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CardCodeRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">MCPRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>					
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 2 -->
+	<Policy PolicyId="rule2Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule2" Effect="Permit">
+			<Description>IVR user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WSKEIBE</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ApprovalRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ApprovalHistoryRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CardCodeRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">CurrencyRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">MCPRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">KonbiniRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>					
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 3 -->
+	<Policy PolicyId="rule3Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule3" Effect="Permit">
+			<Description>ONT user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">STF</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">ApprovalRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+
+	<!-- Start of Rule 4 -->
+	<Policy PolicyId="rule4Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule4" Effect="Permit">
+			<Description>PAS user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SML</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">KeyInRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+	
+	<!-- Start of Rule 5 -->
+	<Policy PolicyId="rule5Policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Simple Policy for XACML demo</Description>
+		<Target/>
+		<!-- Starting Rule definitions -->
+		<Rule RuleId="Rule5" Effect="Permit">
+			<Description>PAS user operations</Description>
+			<Target>
+				<!-- Subject comparisions here -->
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">WSKEGDS</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<!-- Resource comparisons here -->
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">KeyInRequestService</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<!-- Action comparisons here -->
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">execute</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<!-- Purpose comparisons here - represented as a condition -->
+			<Condition></Condition>
+		</Rule>
+	</Policy>
+	
+</PolicySet>

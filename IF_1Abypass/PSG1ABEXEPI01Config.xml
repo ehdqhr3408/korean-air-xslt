@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PSG1ABEXEPI01Config>
+	<PSG1ABEXEPI01>
+		<bodyLongText>ENTERKE</bodyLongText>
+	</PSG1ABEXEPI01>
+	<Start>
+		<Command>ENTERKE</Command>
+	</Start>
+	<InSeries>
+		<Command>MU</Command>
+		<Command>MT</Command>
+		<Command>MB</Command>
+		<Command>MD</Command>
+		<Command>SK</Command>
+		<Command>KF</Command>
+		<Command>GD</Command>
+		<Command>WL</Command>
+		<Command>MP</Command>
+	</InSeries>
+	<End>
+		<Command>EXIT</Command>
+	</End>
+</PSG1ABEXEPI01Config>
