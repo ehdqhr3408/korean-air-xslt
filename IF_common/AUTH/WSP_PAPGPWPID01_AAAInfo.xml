@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<AAAInfo xmlns="http://www.datapower.com/AAAInfo">
+  <FormatVersion>1</FormatVersion> 
+  <!--Filename>local:///AAAInfo.xml</Filename--> 
+  <Summary>This is an example of the file format.</Summary> 
+	<Authenticate>
+		<Username>KLS</Username>
+		<Password>a2FsaXMxMjM=</Password>
+		<OutputCredential>admin</OutputCredential>
+	</Authenticate>
+	<Authenticate>
+		<Username>WSKEIBE</Username>
+		<Password>aWJlcGlwcGFzc3dvcmQyNDY4</Password>
+		<OutputCredential>admin</OutputCredential>
+	</Authenticate>
+	<Authenticate>
+		<Username>STF</Username>
+		<Password>c3Bhc3N3b3Jkc3RmcGlwMQ==</Password>
+		<OutputCredential>admin</OutputCredential>
+	</Authenticate>
+	<Authenticate>
+		<Username>SML</Username>
+		<Password>c3Bhc3N3b3Jkc21scGlwMQ==</Password>
+		<OutputCredential>admin</OutputCredential>
+	</Authenticate>
+	<Authenticate>
+		<Username>WSKEGDS</Username>
+		<Password>Z2RzcGlwcGFzc3dvcmQyNDY4</Password>
+		<OutputCredential>admin</OutputCredential>
+	</Authenticate>
+</AAAInfo>

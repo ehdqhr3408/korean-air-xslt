@@ -1,0 +1,659 @@
+<WdpErrorCode>
+    	<PIP_ERROR_01>
+        <PIP.I01>
+            <CUSTOMER_ERROR_CODE>PIP.I01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Internal Exception</CODE_NM>
+            <CODE_DESC>PIP exception in system handling</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.I01>
+        <PIP.I02>
+            <CUSTOMER_ERROR_CODE>PIP.I02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Internal Exception</CODE_NM>
+            <CODE_DESC>System Down(Connection failed or 404 Not Found)</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.I02>
+        <PIP.E01>
+            <CUSTOMER_ERROR_CODE>PIP.E01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP External Exception</CODE_NM>
+            <CODE_DESC>PIP External Exception</CODE_DESC>
+            <CODE_TYPE>PIP External Exception</CODE_TYPE>
+        </PIP.E01>
+        <PIP.E02>
+            <CUSTOMER_ERROR_CODE>PIP.E02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP External Exception</CODE_NM>
+            <CODE_DESC>External System Exception</CODE_DESC>
+            <CODE_TYPE>PIP External Exception</CODE_TYPE>
+        </PIP.E02>
+        <PIP.V03>
+            <CUSTOMER_ERROR_CODE>PIP.V03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Body Validation</CODE_NM>
+            <CODE_DESC>Soap body invalid Exception</CODE_DESC>
+            <CODE_TYPE>Validation Exception</CODE_TYPE>
+        </PIP.V03>
+        <PIP.V01>
+            <CUSTOMER_ERROR_CODE>PIP.V01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Header Validation</CODE_NM>
+            <CODE_DESC>Invalid mandatory validation parameter(s). : Request System</CODE_DESC>
+            <CODE_TYPE>Validation Exception</CODE_TYPE>
+        </PIP.V01>
+        <PIP.G46>
+            <CUSTOMER_ERROR_CODE>PIP.G46</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PAGE_MAX_SIZE_ERROR</CODE_NM>
+            <CODE_DESC>PAGE MAX SIZE ERROR[system id:{0}, max page:{1}, actual page:{2}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G46>
+        <PIP.G47>
+            <CUSTOMER_ERROR_CODE>PIP.G47</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CURSOR_INFO_NOT_FOUND</CODE_NM>
+            <CODE_DESC>CURSOR INFO NOT FOUND[cursor id:{0}, sequence number:{1}, command:{2}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G47>
+        <PIP.G48>
+            <CUSTOMER_ERROR_CODE>PIP.G48</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ILLEGAL_SEQUENCE_NUMBER</CODE_NM>
+            <CODE_DESC>ILLEGAL SEQUENCE NUMBER[1A sequence no:{0}, PIP sequence no::{1}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G48>
+        <IMS.S01>
+            <CUSTOMER_ERROR_CODE>IMS.S01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP External Exception</CODE_NM>
+            <CODE_DESC>System Down(Connection failed)</CODE_DESC>
+            <CODE_TYPE>PIP External Exception</CODE_TYPE>
+        </IMS.S01>
+        <PIP.G50>
+            <CUSTOMER_ERROR_CODE>PIP.G50</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CURSOR_MESSAGE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>CURSOR MESSAGE NOT FOUND[cursor id:{0}, current page:{1}, command:{2}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G50>
+        <PIP.G51>
+            <CUSTOMER_ERROR_CODE>PIP.G51</CUSTOMER_ERROR_CODE>
+            <CODE_NM>COLUMN_MAX_LENGTH_ERROR</CODE_NM>
+            <CODE_DESC>COLUMN MAX LENGTH[message:{0}, maximum column length:{1}, actual column length:{2}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G51>
+        <PIP.G52>
+            <CUSTOMER_ERROR_CODE>PIP.G52</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CLASS_NOT_FOUND</CODE_NM>
+            <CODE_DESC>CLASS[{0}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G52>
+        <PIP.G53>
+            <CUSTOMER_ERROR_CODE>PIP.G53</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSDL_FILE_TYPE_REQUIRED</CODE_NM>
+            <CODE_DESC>WSDL FILE TYPE[{0]] REQUIRED</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G53>
+        <PIP.G54>
+            <CUSTOMER_ERROR_CODE>PIP.G54</CUSTOMER_ERROR_CODE>
+            <CODE_NM>NAMING_VARIABLE_FAILURE</CODE_NM>
+            <CODE_DESC>NAMING VARIABLE[{0}] FAILURE</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G54>
+        <PIP.G49>
+            <CUSTOMER_ERROR_CODE>PIP.G49</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CURSOR_PAGE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>{0} CURSOR PAGE NOT FOUND[current page:{1}, total page:{2}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G49>
+        <PIP.F03>
+            <CUSTOMER_ERROR_CODE>PIP.F03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>FTP_Transfer_Fail</CODE_NM>
+            <CODE_DESC>FTP Transfer Fail</CODE_DESC>
+            <CODE_TYPE>FTP Exception</CODE_TYPE>
+        </PIP.F03>
+        <PIP.F04>
+            <CUSTOMER_ERROR_CODE>PIP.F04</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Property_File_Not_Found</CODE_NM>
+            <CODE_DESC>Property File Not Found</CODE_DESC>
+            <CODE_TYPE>Property File Exception</CODE_TYPE>
+        </PIP.F04>
+        <PIP.W10>
+            <CUSTOMER_ERROR_CODE>PIP.W10</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Sopa_1A_Business_Exception</CODE_NM>
+            <CODE_DESC>Is not specified, the web service exception</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W10>
+        <PIP.W09>
+            <CUSTOMER_ERROR_CODE>PIP.W09</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Flight_Calcel</CODE_NM>
+            <CODE_DESC>Flight Calcel</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W09>
+        <PIP.F05>
+            <CUSTOMER_ERROR_CODE>PIP.F05</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Ftp_Time_Out_Error</CODE_NM>
+            <CODE_DESC>FTP Time Out</CODE_DESC>
+            <CODE_TYPE>FTP Exception</CODE_TYPE>
+        </PIP.F05>
+        <PIP.W11>
+            <CUSTOMER_ERROR_CODE>PIP.W11</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Web_Service_Time_Out_Error</CODE_NM>
+            <CODE_DESC>Web Service Time Out</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W11>
+        <PIP.F06>
+            <CUSTOMER_ERROR_CODE>PIP.F06</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Shell_Script_Error</CODE_NM>
+            <CODE_DESC>Shell script execution error</CODE_DESC>
+            <CODE_TYPE>Shell Script Exception</CODE_TYPE>
+        </PIP.F06>
+        <PIP.V05>
+            <CUSTOMER_ERROR_CODE>16491</CUSTOMER_ERROR_CODE>
+            <CODE_NM>LSS Hybrid Validate Length</CODE_NM>
+            <CODE_DESC>Invalid mandatory data (Wrong request data).</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.V05>
+        <PIP.T01>
+            <CUSTOMER_ERROR_CODE>PIP.T01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Timeout Exception</CODE_NM>
+            <CODE_DESC>Timeout Exception</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.T01>
+        <PIP.A03>
+            <CUSTOMER_ERROR_CODE>PIP.A03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>LSS Hybrid Authentication failed.</CODE_NM>
+            <CODE_DESC>Authentication failed. Please check your credentials and try again.</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.A03>
+        <PIP.A02>
+            <CUSTOMER_ERROR_CODE>26341</CUSTOMER_ERROR_CODE>
+            <CODE_NM>LSS Hybrid Public Key expired</CODE_NM>
+            <CODE_DESC>Public Key expired</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.A02>
+        <PIP.V04>
+            <CUSTOMER_ERROR_CODE>26255</CUSTOMER_ERROR_CODE>
+            <CODE_NM>invalid request data.</CODE_NM>
+            <CODE_DESC>invalid request data.</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.V04>
+        <PIP.V06>
+            <CUSTOMER_ERROR_CODE>16490</CUSTOMER_ERROR_CODE>
+            <CODE_NM>LSS Hybrid Invalid</CODE_NM>
+            <CODE_DESC>Some mandatory data are not found (Wrong request data).</CODE_DESC>
+            <CODE_TYPE>Validation Exception</CODE_TYPE>
+        </PIP.V06>
+        <PIP.V07>
+            <CUSTOMER_ERROR_CODE>PIP.V07</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Body Command Invalid</CODE_NM>
+            <CODE_DESC>INVALID ENTRY OR FORMAT</CODE_DESC>
+            <CODE_TYPE>Format Exception</CODE_TYPE>
+        </PIP.V07>
+        <PIP.V02>
+            <CUSTOMER_ERROR_CODE>PIP.V02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Header Validation</CODE_NM>
+            <CODE_DESC>Missing the following mandatory parameter(s). : Request System</CODE_DESC>
+            <CODE_TYPE>Validation Exception</CODE_TYPE>
+        </PIP.V02>
+        <PIP.A01>
+            <CUSTOMER_ERROR_CODE>PIP.A01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Authentication Exception</CODE_NM>
+            <CODE_DESC>PIP authentication fail (user,password).</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.A01>
+        <PIP.L01>
+            <CUSTOMER_ERROR_CODE>PIP.L01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP SLA Exception</CODE_NM>
+            <CODE_DESC>PIP SLA Exception</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.L01>
+        <PIP.I99>
+            <CUSTOMER_ERROR_CODE>PIP.I99</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Internal Exception</CODE_NM>
+            <CODE_DESC>Unknown exception in system handling</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.I99>
+        <PIP.P01>
+            <CUSTOMER_ERROR_CODE>PIP.P01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Internal Exception</CODE_NM>
+            <CODE_DESC>XML Parsing Error</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.P01>
+        <PIP.R01>
+            <CUSTOMER_ERROR_CODE>PIP.R01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Routing Exception</CODE_NM>
+            <CODE_DESC>Routing Rule[%] not found (WSRR)</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.R01>
+        <PIP.S01>
+            <CUSTOMER_ERROR_CODE>PIP.S01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PIP Session Exception</CODE_NM>
+            <CODE_DESC>PIP Session Handler Exception</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.S01>
+        <PIP.Q01>
+            <CUSTOMER_ERROR_CODE>PIP.Q01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Queue Exception</CODE_NM>
+            <CODE_DESC>Queue Read Fail</CODE_DESC>
+            <CODE_TYPE>Queue Exception</CODE_TYPE>
+        </PIP.Q01>
+        <PIP.Q02>
+            <CUSTOMER_ERROR_CODE>PIP.Q02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Queue Exception</CODE_NM>
+            <CODE_DESC>Queue Put Fail</CODE_DESC>
+            <CODE_TYPE>Queue Exception</CODE_TYPE>
+        </PIP.Q02>
+        <PIP.F01>
+            <CUSTOMER_ERROR_CODE>PIP.F01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Queue Exception</CODE_NM>
+            <CODE_DESC>File Read Fail</CODE_DESC>
+            <CODE_TYPE>Queue Exception</CODE_TYPE>
+        </PIP.F01>
+        <PIP.F02>
+            <CUSTOMER_ERROR_CODE>PIP.F02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Queue Exception</CODE_NM>
+            <CODE_DESC>File Put Fail</CODE_DESC>
+            <CODE_TYPE>Queue Exception</CODE_TYPE>
+        </PIP.F02>
+        <PIP.Q10>
+            <CUSTOMER_ERROR_CODE>PIP.Q10</CUSTOMER_ERROR_CODE>
+            <CODE_NM>MQ_Header_Validation_Error</CODE_NM>
+            <CODE_DESC>MQ Header Validation Exception</CODE_DESC>
+            <CODE_TYPE>MQ Validation</CODE_TYPE>
+        </PIP.Q10>
+        <PIP.Q11>
+            <CUSTOMER_ERROR_CODE>PIP.Q11</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Queue_Name_Null</CODE_NM>
+            <CODE_DESC>No queue name in the property file</CODE_DESC>
+            <CODE_TYPE>Property File Exception</CODE_TYPE>
+        </PIP.Q11>
+        <PIP.Q12>
+            <CUSTOMER_ERROR_CODE>PIP.Q12</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Real_Time_Route_Error</CODE_NM>
+            <CODE_DESC>Incorrect settings in the property file</CODE_DESC>
+            <CODE_TYPE>Property File Exception</CODE_TYPE>
+        </PIP.Q12>
+        <PIP.S02>
+            <CUSTOMER_ERROR_CODE>PIP.S02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Update_Key_Not_Found</CODE_NM>
+            <CODE_DESC>Cannot update data that meets the criteria</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S02>
+        <PIP.S03>
+            <CUSTOMER_ERROR_CODE>PIP.S03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Delete_Key_Not_Found</CODE_NM>
+            <CODE_DESC>Cannot delete data that meets the criteria</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S03>
+        <PIP.S04>
+            <CUSTOMER_ERROR_CODE>PIP.S04</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ODS_Connection_Error</CODE_NM>
+            <CODE_DESC>DB connection fail</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S04>
+        <PIP.S05>
+            <CUSTOMER_ERROR_CODE>PIP.S05</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ODS_Insert_Error</CODE_NM>
+            <CODE_DESC>Unique Constraint  Violated</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S05>
+        <PIP.S06>
+            <CUSTOMER_ERROR_CODE>PIP.S06</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Sql_Parameter_Error</CODE_NM>
+            <CODE_DESC>Missing IN or OUT parameter</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S06>
+        <PIP.S07>
+            <CUSTOMER_ERROR_CODE>PIP.S07</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PK_Column_Null</CODE_NM>
+            <CODE_DESC>Cannot insert NULL into primary key</CODE_DESC>
+            <CODE_TYPE>SQL Exception</CODE_TYPE>
+        </PIP.S07>
+        <PIP.P02>
+            <CUSTOMER_ERROR_CODE>PIP.P02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Edifact_Parser_Exception</CODE_NM>
+            <CODE_DESC>Edifact Parser Exception</CODE_DESC>
+            <CODE_TYPE>Edifact Parser Exception</CODE_TYPE>
+        </PIP.P02>
+        <PIP.P03>
+            <CUSTOMER_ERROR_CODE>PIP.P03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Invalid_feed_Structure_validation</CODE_NM>
+            <CODE_DESC>Invalid feed Structure validation</CODE_DESC>
+            <CODE_TYPE>Edifact Parser Exception</CODE_TYPE>
+        </PIP.P03>
+        <PIP.W01>
+            <CUSTOMER_ERROR_CODE>PIP.W01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Invalid_Date</CODE_NM>
+            <CODE_DESC>Invalid Date</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W01>
+        <PIP.W02>
+            <CUSTOMER_ERROR_CODE>PIP.W02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Invalid_Airline_Code</CODE_NM>
+            <CODE_DESC>Invalid Airline Code</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W02>
+        <PIP.W03>
+            <CUSTOMER_ERROR_CODE>PIP.W03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Unknown_Airline</CODE_NM>
+            <CODE_DESC>Unknown Airline or Airline not Hosted by NGI</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W03>
+        <PIP.W04>
+            <CUSTOMER_ERROR_CODE>PIP.W04</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Flight_Rebuild_In_Progress_Locked</CODE_NM>
+            <CODE_DESC>Flight Rebuild in Progress Locked</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W04>
+        <PIP.W05>
+            <CUSTOMER_ERROR_CODE>PIP.W05</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Flight_Date_Not_Found</CODE_NM>
+            <CODE_DESC>Flight date not found</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W05>
+        <PIP.W06>
+            <CUSTOMER_ERROR_CODE>PIP.W06</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_Internal_Error</CODE_NM>
+            <CODE_DESC>Soap Internal Error</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W06>
+        <PIP.W07>
+            <CUSTOMER_ERROR_CODE>PIP.W07</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Soap_No_Permission</CODE_NM>
+            <CODE_DESC>You are not authorised to perform this action</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W07>
+        <PIP.W08>
+            <CUSTOMER_ERROR_CODE>PIP.W08</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Response_Soap_Fault</CODE_NM>
+            <CODE_DESC>Receive Soap Fault Message</CODE_DESC>
+            <CODE_TYPE>Web Service Exception</CODE_TYPE>
+        </PIP.W08>
+        <PIP.O01>
+            <CUSTOMER_ERROR_CODE>PIP.O01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Null_Pointer_Exception</CODE_NM>
+            <CODE_DESC>Java Null Pointer Exception</CODE_DESC>
+            <CODE_TYPE>Java Exception</CODE_TYPE>
+        </PIP.O01>
+        <PIP.O02>
+            <CUSTOMER_ERROR_CODE>PIP.O02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Array_Index_Out_Of_Bounds_Exception</CODE_NM>
+            <CODE_DESC>Array index out of range</CODE_DESC>
+            <CODE_TYPE>Java Exception</CODE_TYPE>
+        </PIP.O02>
+        <PIP.O03>
+            <CUSTOMER_ERROR_CODE>PIP.O03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Date_Format_Error</CODE_NM>
+            <CODE_DESC>Date Format Conversion Exception</CODE_DESC>
+            <CODE_TYPE>Java Exception</CODE_TYPE>
+        </PIP.O03>
+        <PIP.M01>
+            <CUSTOMER_ERROR_CODE>PIP.M01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WMB_Internal_Error</CODE_NM>
+            <CODE_DESC>WMB Internal Exception</CODE_DESC>
+            <CODE_TYPE>WMB Internal Exception</CODE_TYPE>
+        </PIP.M01>
+        <PIP.K01>
+            <CUSTOMER_ERROR_CODE>PIP.K01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>Public key cannot be found or is expired</CODE_NM>
+            <CODE_DESC>Public key cannot be found or is expired</CODE_DESC>
+            <CODE_TYPE>PIP Internal Exception</CODE_TYPE>
+        </PIP.K01>
+        <PIP.G01>
+            <CUSTOMER_ERROR_CODE>PIP.G01</CUSTOMER_ERROR_CODE>
+            <CODE_NM>RESOURCE_FILE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>RESOURCE PROPERTY FILE[{0}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE>9999</CODE_TYPE>
+        </PIP.G01>
+        <PIP.G02>
+            <CUSTOMER_ERROR_CODE>PIP.G02</CUSTOMER_ERROR_CODE>
+            <CODE_NM>RESOURCE_FILE_LOAD_ERROR</CODE_NM>
+            <CODE_DESC>RESOURCE PROPERTY FILE[{0}] LOAD ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G02>
+        <PIP.G03>
+            <CUSTOMER_ERROR_CODE>PIP.G03</CUSTOMER_ERROR_CODE>
+            <CODE_NM>DATASOURCE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>DATASOURCE[{0}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G03>
+        <PIP.G04>
+            <CUSTOMER_ERROR_CODE>PIP.G04</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CONNECTION_NOT_AVAILABLE</CODE_NM>
+            <CODE_DESC>CONNECTION[{0}:{1}] NOT AVAILABLE</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G04>
+        <PIP.G05>
+            <CUSTOMER_ERROR_CODE>PIP.G05</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CONNECTION_FAILURE</CODE_NM>
+            <CODE_DESC>CONNECTION[{0}:{1}] FAILURE</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G05>
+        <PIP.G06>
+            <CUSTOMER_ERROR_CODE>PIP.G06</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CONNECTION_AUTOCOMMIT_ERROR</CODE_NM>
+            <CODE_DESC>CONNECTION AUTOCOMMIT ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G06>
+        <PIP.G07>
+            <CUSTOMER_ERROR_CODE>PIP.G07</CUSTOMER_ERROR_CODE>
+            <CODE_NM>QUERY_UNKNOWN_ERROR</CODE_NM>
+            <CODE_DESC>QUERY UNKNOWN ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G07>
+        <PIP.G08>
+            <CUSTOMER_ERROR_CODE>PIP.G08</CUSTOMER_ERROR_CODE>
+            <CODE_NM>SELECT_FOR_UPDATE_ERROR</CODE_NM>
+            <CODE_DESC>SELECT FOR UPDATE ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G08>
+        <PIP.G09>
+            <CUSTOMER_ERROR_CODE>PIP.G09</CUSTOMER_ERROR_CODE>
+            <CODE_NM>QUERY_SQL_ERROR</CODE_NM>
+            <CODE_DESC>QUERY SQL ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G09>
+        <PIP.G10>
+            <CUSTOMER_ERROR_CODE>PIP.G10</CUSTOMER_ERROR_CODE>
+            <CODE_NM>METHOD_NOT_FOUND</CODE_NM>
+            <CODE_DESC>METHOD[{0}] OF CLASS[{1}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G10>
+        <PIP.G11>
+            <CUSTOMER_ERROR_CODE>PIP.G11</CUSTOMER_ERROR_CODE>
+            <CODE_NM>INSTANCE_ILLEGAL_ACCESS</CODE_NM>
+            <CODE_DESC>INSTANCE[{0}] ILLEGAL ACCESS</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G11>
+        <PIP.G12>
+            <CUSTOMER_ERROR_CODE>PIP.G12</CUSTOMER_ERROR_CODE>
+            <CODE_NM>INSTANCE_INSTANTIATION_FAILURE</CODE_NM>
+            <CODE_DESC>INSTANCE[{0}] INSTANTIATION FAILURE</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G12>
+        <PIP.G13>
+            <CUSTOMER_ERROR_CODE>PIP.G13</CUSTOMER_ERROR_CODE>
+            <CODE_NM>METHOD_INVOCATION_FAILURE</CODE_NM>
+            <CODE_DESC>METHOD INVOCATION FAILURE[CLASS:{0}, METHOD:{1}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G13>
+        <PIP.G14>
+            <CUSTOMER_ERROR_CODE>PIP.G14</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ERROR_CODE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>ERROR CODE[{0}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G14>
+        <PIP.G15>
+            <CUSTOMER_ERROR_CODE>PIP.G15</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ERROR_CODE_INQUIRY_ERROR</CODE_NM>
+            <CODE_DESC>ERROR CODE[{0}] INQUIRY ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G15>
+        <PIP.G16>
+            <CUSTOMER_ERROR_CODE>PIP.G16</CUSTOMER_ERROR_CODE>
+            <CODE_NM>JNDI_NAME_NOT_FOUND</CODE_NM>
+            <CODE_DESC>JNDI NAME[MQ FACTORY:{0}, QUEUE NAME:{1}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G16>
+        <PIP.G17>
+            <CUSTOMER_ERROR_CODE>PIP.G17</CUSTOMER_ERROR_CODE>
+            <CODE_NM>JMS_QUEUE_SESSION_ERROR</CODE_NM>
+            <CODE_DESC>JMS QUEUE SESSION ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G17>
+        <PIP.G18>
+            <CUSTOMER_ERROR_CODE>PIP.G18</CUSTOMER_ERROR_CODE>
+            <CODE_NM>QUEUE_OPERATION_ERROR</CODE_NM>
+            <CODE_DESC>QUEUE OPERATION ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G18>
+        <PIP.G19>
+            <CUSTOMER_ERROR_CODE>PIP.G19</CUSTOMER_ERROR_CODE>
+            <CODE_NM>QUEUE_MESSAGE_WRITE_ERROR</CODE_NM>
+            <CODE_DESC>QUEUE MESSAGE[{0}] WRITE ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G19>
+        <PIP.G20>
+            <CUSTOMER_ERROR_CODE>PIP.G20</CUSTOMER_ERROR_CODE>
+            <CODE_NM>QUEUE_SETUP_ERROR</CODE_NM>
+            <CODE_DESC>QUEUE SETUP ERROR[HOST NAME{0], PORT:{1}, MANAGER:{2}, QUEUE NAME:{3}, CHANNEL:{4}, CCSID:{5}, COMPLETION CODE:{6}, REASON</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G20>
+        <PIP.G22>
+            <CUSTOMER_ERROR_CODE>PIP.G22</CUSTOMER_ERROR_CODE>
+            <CODE_NM>USER_CREDENTIAL_INFO_NOT_FOUND</CODE_NM>
+            <CODE_DESC>USER CREDENTIAL INFO[USER ID:{0}, OFFICE ID:{1}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G22>
+        <PIP.G23>
+            <CUSTOMER_ERROR_CODE>PIP.G23</CUSTOMER_ERROR_CODE>
+            <CODE_NM>MAX_SESSION_ALREADY_REACHED</CODE_NM>
+            <CODE_DESC>MAX SESSION ALREADY REACHED[SESSION:{0}, MAX SESSION:{1}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G23>
+        <PIP.G24>
+            <CUSTOMER_ERROR_CODE>PIP.G24</CUSTOMER_ERROR_CODE>
+            <CODE_NM>SESSION_NOT_FOUND</CODE_NM>
+            <CODE_DESC>SESSION NOT_FOUND [SESSION ID:{0}, SESSION TYPE:{1}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G24>
+        <PIP.G25>
+            <CUSTOMER_ERROR_CODE>PIP.G25</CUSTOMER_ERROR_CODE>
+            <CODE_NM>TASK_NOT_SCHEDULED_FOR_EXECUTION</CODE_NM>
+            <CODE_DESC>TASK NOT SCHEDULED FOR EXECUTION</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G25>
+        <PIP.G26>
+            <CUSTOMER_ERROR_CODE>PIP.G26</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PERIOD_IS_LESS_THAN_OR_EQUAL_TO_ZERO</CODE_NM>
+            <CODE_DESC>PERIOD IS LESS THAN OR EQUAL TO ZERO</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G26>
+        <PIP.G27>
+            <CUSTOMER_ERROR_CODE>PIP.G27</CUSTOMER_ERROR_CODE>
+            <CODE_NM>COMMAND_IS_WRONG</CODE_NM>
+            <CODE_DESC>COMMAND IS WRONG</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G27>
+        <PIP.G28>
+            <CUSTOMER_ERROR_CODE>PIP.G28</CUSTOMER_ERROR_CODE>
+            <CODE_NM>TIMER_SHUTDOWN_NOT_PERMITTED</CODE_NM>
+            <CODE_DESC>TIMER SHUTDOWN NOT PERMITTED</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G28>
+        <PIP.G29>
+            <CUSTOMER_ERROR_CODE>PIP.G29</CUSTOMER_ERROR_CODE>
+            <CODE_NM>DATE_FORMAT_INVALID</CODE_NM>
+            <CODE_DESC>DATE FORMAT[FROM DATE:{0}, TO DATE:{1}, FORMAT:{2}] INVALID</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G29>
+        <PIP.G30>
+            <CUSTOMER_ERROR_CODE>PIP.G30</CUSTOMER_ERROR_CODE>
+            <CODE_NM>PARAMETER_IS_MADATORY</CODE_NM>
+            <CODE_DESC>PARAMETER[{0}] IS MANDATORY[{1}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G30>
+        <PIP.G31>
+            <CUSTOMER_ERROR_CODE>PIP.G31</CUSTOMER_ERROR_CODE>
+            <CODE_NM>TYPE_NOT_SUPPORTED</CODE_NM>
+            <CODE_DESC>{0} TYPE[{1}] NOT SUPPORTED</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G31>
+        <PIP.G32>
+            <CUSTOMER_ERROR_CODE>PIP.G32</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CONNECTION_IS_CLOSED_OR_NOT_VALID</CODE_NM>
+            <CODE_DESC>CONNECTION IS CLOSED OR NOT VALID</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G32>
+        <PIP.G33>
+            <CUSTOMER_ERROR_CODE>PIP.G33</CUSTOMER_ERROR_CODE>
+            <CODE_NM>MAP_INSTANCE_IS_NULL_OR_EMPTY</CODE_NM>
+            <CODE_DESC>MAP INSTANCE IS NULL OR EMPTY</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G33>
+        <PIP.G34>
+            <CUSTOMER_ERROR_CODE>PIP.G34</CUSTOMER_ERROR_CODE>
+            <CODE_NM>LIST_INSTANCE_IS_NULL_OR_EMPTY</CODE_NM>
+            <CODE_DESC>LIST INSTANCE IS NULL OR EMPTY</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G34>
+        <PIP.G35>
+            <CUSTOMER_ERROR_CODE>PIP.G35</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_LOGIN_ERROR</CODE_NM>
+            <CODE_DESC>WSRR LOGIN[USER ID:{0}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G35>
+        <PIP.G36>
+            <CUSTOMER_ERROR_CODE>PIP.G36</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_SECURITY_ERROR</CODE_NM>
+            <CODE_DESC>WSRR SECURITY[USER ID:{0}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G36>
+        <PIP.G37>
+            <CUSTOMER_ERROR_CODE>PIP.G37</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_SERVICE_REGISTRY_LOGIN_ERROR</CODE_NM>
+            <CODE_DESC>WSRR SERVICE REGISTRY LOGIN{0}[{1}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G37>
+        <PIP.G38>
+            <CUSTOMER_ERROR_CODE>PIP.G38</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSDL_READING_ERROR</CODE_NM>
+            <CODE_DESC>WSDL[{0}] READING ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G38>
+        <PIP.G39>
+            <CUSTOMER_ERROR_CODE>PIP.G39</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_SERVICE_REGISTRY_ERROR</CODE_NM>
+            <CODE_DESC>WSRR SERVICE REGISTRY[INTERFACE ID:{0}, PROJECT:{1}, QUERY:{2}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G39>
+        <PIP.G40>
+            <CUSTOMER_ERROR_CODE>PIP.G40</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_ROUTING_RULE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>WSRR ROUTING RULE[INTERFACE ID:{0}, PROJECT:{1}, QUERY:{2}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G40>
+        <PIP.G41>
+            <CUSTOMER_ERROR_CODE>PIP.G41</CUSTOMER_ERROR_CODE>
+            <CODE_NM>ODS_DAO_INFO_NOT_FOUND</CODE_NM>
+            <CODE_DESC>ODS DAO INFO[SERVICE ID:{0}, QUERY:{1}] NOT FOUND</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G41>
+        <PIP.G42>
+            <CUSTOMER_ERROR_CODE>PIP.G42</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_ODS_SERVICE_REGISTRY_ERROR</CODE_NM>
+            <CODE_DESC>WSRR ODS SERVICE REGISTRY[SERVICE ID:{0}, PROJECT:{1}, QUERY:{2}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G42>
+        <PIP.G43>
+            <CUSTOMER_ERROR_CODE>PIP.G43</CUSTOMER_ERROR_CODE>
+            <CODE_NM>WSRR_DOCUMENT_REGISTRY_ERROR</CODE_NM>
+            <CODE_DESC>WSRR DOCUMENT REGISTRY[{0}:{1}, QUERY:{2}] ERROR</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G43>
+        <PIP.G44>
+            <CUSTOMER_ERROR_CODE>PIP.G44</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CURSOR_MESSAGE_EMPTY</CODE_NM>
+            <CODE_DESC>CURSOR MESSAGE EMPTY[message:{0}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G44>
+        <PIP.G45>
+            <CUSTOMER_ERROR_CODE>PIP.G45</CUSTOMER_ERROR_CODE>
+            <CODE_NM>CURSOR_BASE_NOT_FOUND</CODE_NM>
+            <CODE_DESC>CURSOR BASE NOT FOUND[system id:{0}]</CODE_DESC>
+            <CODE_TYPE></CODE_TYPE>
+        </PIP.G45>
+      </PIP_ERROR_01>
+</WdpErrorCode>
+

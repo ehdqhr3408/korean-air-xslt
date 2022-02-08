@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WDPXqueryMappings>
+	<IBE>
+    <bxquery>https://PIPWSRR:9443/WSRR/7.5/Metadata/XML/GraphQuery?query=/WSRR/GenericObject[@primaryType=%27http://www.kepip.com/model/wsrr/7.5/BizModel%23Interface%27%20and%20@PIP_interfaceID%20=%20%27</bxquery>
+    <axquery>%27%20and%20classifiedByAllOf(.,%27http://www.kepip.com/model/wsrr/7.5/classification%23WDP_IBE%27,%20%27http://www.kepip.com/model/wsrr/7.5/classification%23WebService%27,%20%27http://www.kepip.com/model/wsrr/7.5/classification%23WDP_1A%27)]</axquery>
+  </IBE>
+	<KALis>
+    <bxquery>https://PIPWSRR:9443/WSRR/7.5/Metadata/XML/GraphQuery?query=/WSRR/GenericObject[@primaryType=%27http://www.kepip.com/model/wsrr/7.5/BizModel%23Interface%27%20and%20@PIP_interfaceID%20=%20%27</bxquery>
+    <axquery>%27%20and%20classifiedByAllOf(.,%27http://www.kepip.com/model/wsrr/7.5/classification%23WDP_KALis%27,%20%27http://www.kepip.com/model/wsrr/7.5/classification%23WebService%27,%20%27http://www.kepip.com/model/wsrr/7.5/classification%23WDP_1A%27)]</axquery>
+  </KALis>
+	<GPS>
+    <bxquery>https://PIPWSRR:9443/WSRR/7.5/Metadata/XML/GraphQuery?query=/WSRR/GenericObject[@primaryType=%27http://www.kepip.com/model/wsrr/7.5/BizModel%23Interface%27%20and%20@PIP_interfaceID%20=%20%27</bxquery>
+    <axquery>%27%20and%20classifiedByAllOf(.,%27http://www.kepip.com/model/wsrr/7.5/classification%23WebService%27,%20%27http://www.kepip.com/model/wsrr/7.5/classification%23WDP_WS%27)]</axquery>
+  </GPS>   
+</WDPXqueryMappings>
